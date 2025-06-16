@@ -22,7 +22,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| `Academic Portal`           | Multi-role portal where students, parents, and faculty can manage their own academic-related information and activities |
+| [`Academic Portal`](https://github.com/mikeygelooooo/Academic-Portal)           | Multi-role portal where students, parents, and faculty can manage their own academic-related information and activities |
 
 ---
 

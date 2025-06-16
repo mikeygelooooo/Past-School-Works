@@ -12,8 +12,8 @@ This folder contains all projects, exercises, or activities completed for the su
 
 ## 🛠️ Technologies Used
 
-- Programming Language(s): HTML, CSS
-- Frameworks: Bootstrap
+- Programming Language(s): HTML, CSS, Python
+- Frameworks: Bootstrap, Django, SQLite
 - Tools: VS Code
 
 ---
@@ -22,13 +22,14 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | Project/Exercise Name        | Description                                               |
 |-----------------------------|-----------------------------------------------------------|
-| `First Webpage`             | Simple personal webpage showcasing hobbies and interests  |
-| `Landing Page`              | Simple e-commerce landing page with product highlights    |
-| `Resume`                    | Online resume page with structured layout for skills, education, and experience |
+| `Assignment 01`             | Basic Django setup and initial data display               |
+| `Assignment 02`             | URL routing and view functions in Django                  |
+| `Assignment 03`             | Basic blog website with CRUD functionality                |
+| `Assignment 04`             | User account system for the blog website (registration, login, logout) |
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| [`Student Dashboard`](https://github.com/mikeygelooooo/student-dashboard)         | Website for students to manage subjects, tasks, and study materials |
+| [`Academic Portal`](https://github.com/mikeygelooooo/Academic-Portal)           | Multi-role portal where students, parents, and faculty can manage their own academic-related information and activities |
 
 ---
 
