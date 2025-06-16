@@ -13,43 +13,43 @@ Each folder is named after a subject code (e.g., `IT 134`) and contains projects
 ## 🗂️ Subjects & Technologies
 
 ### 📘 `IT 134` — *Computer Programming 1*
-- 🔧 Language: C
+- 🔧 Technologies: C
 
 ### 📗 `IT 163` — *Computer Programming 2*
-- 🔧 Language: Python
+- 🔧 Technologies: Python
 
 ### 📘 `IT 213` — *Data Structures and Algorithms*
-- 🔧 Language: C
+- 🔧 Technologies: C
 
 ### 📙 `IT 223` — *Information Management*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5, PHP, MySQL
+- 🌐 Technologies: HTML, CSS, Bootstrap, PHP, MySQL
 
 ### 📗 `IT 253` — *Platform Technologies*
-- 🔧 Language: Python
+- 🔧 Technologies: Python
 
 ### 📙 `IT 263` — *Integrative Programming and Technologies 1*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5, PHP, MySQL
+- 🌐 Technologies: HTML, CSS, Bootstrap, PHP, MySQL
 
 ### 📘 `IT 273` — *Web Systems and Technologies 1*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5
+- 🌐 Technologies: HTML, CSS, Bootstrap
 
 ### 📗 `IT 293` — *Statistics and Probability*
-- 🔧 Language: Python
+- 🔧 Technologies: Python
 
 ### 📙 `IT 313` — *Advanced Database Systems*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5, Python, Django, SQLite 3
+- 🌐 Technologies: HTML, CSS, Bootstrap, Python, Django, SQLite
 
 ### 📗 `IT 353` — *Data Mining and Analytics*
-- 🔧 Language: Python
+- 🔧 Technologies: Python
 
 ### 📙 `IT 363A` — *Application Development and Emerging Technologies*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5, AdminLTE 4, PHP, CodeIgniter 4, SQLite 3
+- 🌐 Technologies: HTML, CSS, Bootstrap, AdminLTE, PHP, CodeIgniter, MySQL
 
 ### 📘 `IT 373` — *Web Systems and Technologies 2*
-- 🌐 Technologies: HTML, CSS, Bootstrap 5, Python, Django, SQLite 3
+- 🌐 Technologies: HTML, CSS, Bootstrap, Python, Django, SQLite
 
 ### 📗 `IT 383` — *Event-Driven Programming*
-- 🔧 Language: Java
+- 🔧 Technologies: Java
 
 > ✅ *Note: If a subject appears twice, it may contain multiple relevant components or merged topics.*
 
@@ -57,10 +57,10 @@ Each folder is named after a subject code (e.g., `IT 134`) and contains projects
 
 ## 🛠️ Tools & Frameworks Overview
 
-- **Frontend**: HTML, CSS, Bootstrap 5, AdminLTE
-- **Backend**: PHP, Python (Django), CodeIgniter 4
-- **Databases**: MySQL, SQLite 3
-- **Languages**: C, Python, Java
+- **Frontend**: HTML, CSS, Bootstrap, AdminLTE
+- **Backend**: Python (Django), CodeIgniter
+- **Databases**: MySQL, SQLite
+- **Languages**: C, Python, PHP, Java
 - **Tools**: VS Code, GitHub, XAMPP
 
 ---
