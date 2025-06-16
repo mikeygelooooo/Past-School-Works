@@ -27,9 +27,13 @@ This folder contains all projects, exercises, or activities completed for the su
 | `OddorEven.c`               | Determines if a number is odd or even                |
 | `ParkingCharge.c`           | Computes parking charges based on hours used         |
 | `Shapes.c`                  | Displays basic geometric shapes using loops          |
-| `Shapes2.c`                 | Prints more complex shapes with nested loops         |
+| `Shapes2.c`                 | Prints more advanced shapes using nested loops       |
 | `ShirtSize.c`               | Determines shirt size based on character input       |
-| `TypesOfLoops.c`            | Demonstrates usage of different loop structures in C |
+| `TypesOfLoops.c`            | Demonstrates various loop structures in C            |
+
+| **Final Project**            | **Description**                                      |
+|-----------------------------|------------------------------------------------------|
+| `Lucky Nine`                | Simulation of the card game *Lucky Nine*, featuring card draws, point system, and game logic |
 
 ---
 
