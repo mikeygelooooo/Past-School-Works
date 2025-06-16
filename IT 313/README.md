@@ -1,4 +1,4 @@
-# 📚 IT 273 — Advanced Database Systems
+# 📚 IT 313 — Advanced Database Systems
 
 This folder contains all projects, exercises, or activities completed for the subject **Advanced Database Systems** during my time as a BSIT student at **Eastern Visayas State University**.
 
