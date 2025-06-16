@@ -13,6 +13,7 @@ This folder contains all projects, exercises, or activities completed for the su
 ## 🛠️ Technologies Used
 
 - Programming Language(s): Python
+- Frameworks: Tkinter, CustomTkinter
 - Tools: VS Code
 
 ---
