@@ -35,5 +35,5 @@ This folder contains all projects, exercises, or activities completed for the su
 
 ## 🗓️ Semester
 
-- Academic Year: AY 2023-2024  
+- Academic Year: AY 2024-2025  
 - Semester: 1st Semester
