@@ -61,7 +61,7 @@ Each folder is named after a subject code (e.g., `IT 134`) and contains projects
 - **Backend**: Python (Django), CodeIgniter
 - **Databases**: MySQL, SQLite
 - **Languages**: C, Python, PHP, Java
-- **Tools**: VS Code, GitHub, XAMPP
+- **Tools**: VS Code, IntelliJ IDEA, GitHub, XAMPP
 
 ---
 

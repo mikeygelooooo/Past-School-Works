@@ -1,12 +1,12 @@
-# 📚 IT 273 — Web Systems and Technologies 1
+# 📚 IT 373 — Web Systems and Technologies 2
 
-This folder contains all projects, exercises, or activities completed for the subject **Web Systems and Technologies 1** during my time as a BSIT student at **Eastern Visayas State University**.
+This folder contains all projects, exercises, or activities completed for the subject **Web Systems and Technologies 2** during my time as a BSIT student at **Eastern Visayas State University**.
 
 ---
 
 ## 🧠 Subject Overview
 
-> This subject focuses on the fundamentals of client-side web development. It includes designing responsive web pages using HTML, CSS, JavaScript, and Bootstrap, with emphasis on usability, layout, and design best practices.
+> This is a follow-up to Web Systems 1, focusing on server-side development using frameworks like Django. Students learn to build dynamic, database-driven web applications and apply concepts like routing, templating, and MVC architecture.
 
 ---
 
