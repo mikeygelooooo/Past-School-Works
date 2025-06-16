@@ -26,7 +26,6 @@ This folder contains all projects, exercises, or activities completed for the su
 | `Landing Page`              | Simple e-commerce landing page with product highlights    |
 | `Resume`                    | Online resume page with structured layout for skills, education, and experience |
 
-
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
 | `Student Dashboard`         | Website for students to manage subjects, tasks, and study materials |
@@ -36,4 +35,4 @@ This folder contains all projects, exercises, or activities completed for the su
 ## 🗓️ Semester
 
 - Academic Year: AY 2023-2024  
-- Semester: 2nd Semester
+- Semester: 1st Semester
