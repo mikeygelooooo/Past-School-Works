@@ -36,4 +36,4 @@ This folder contains all projects, exercises, or activities completed for the su
 ## 🗓️ Semester
 
 - Academic Year: AY 2022-2023  
-- Semester: 1st Semester
+- Semester: 2nd Semester
