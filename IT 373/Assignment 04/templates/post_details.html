@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center mb-3">
+        <div class="col-lg-8 text-center">
+            <span class="badge text-bg-secondary rounded-pill mb-3 fs-6">{{ post.category }}</span>
+
+            <h1 class="fw-bold mb-4 display-4">{{ post.title }}</h1>
+
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <a href="{% url 'edit_post' slug=post.slug %}" class="btn btn-outline-dark">
+                    <i class="bi bi-pencil-square me-1"></i>Edit
+                </a>
+                <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    <i class="bi bi-trash me-1"></i>Delete
+                </a>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center text-body-secondary mb-4">
+                <small>
+                    <i class="bi bi-person-fill me-1"></i>{{ post.author }}
+                    <span class="mx-2">•</span>
+                    <i class="bi bi-clock me-1"></i>{{ post.reading_time }} min read
+                    <span class="mx-2">•</span>
+                    <i class="bi bi-calendar3 me-1"></i>{{ post.date_posted|date:"M d, Y, h:i A" }}
+                </small>
+            </div>
+
+            <p class="lead text-body-secondary mb-3">{{ post.intro }}</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <hr class="border-2 my-5">
+
+            <article class="fs-5 lh-lg text-body">
+                {{ post.content|linebreaksbr }}
+            </article>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <hr class="border-2 my-5">
+
+            <h2>Comments ({{ post.comments.count }})</h2>
+
+            {% for comment in post.comments.all %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle me-2"></i>
+                        <h5 class="card-title">{{ comment.name }}</h5>
+                    </div>
+                    <p class="card-text">{{ comment.content }}</p>
+                    <p class="card-text"><small class="text-muted">{{ comment.date_commented|date:"M d, Y, h:i A"}}</small></p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No comments yet.</p>
+            {% endfor %}
+
+            <hr class="border-2 my-5">
+
+            <h3 class="my-4">Leave a Comment</h3>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete "{{ post.title }}"? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form method="POST" action="{% url 'delete_post' post.slug %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

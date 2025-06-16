@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Months of the Year</h1>
+
+    <hr><br>
+    <div class="container">
+        <div class="row">
+            {% for month in months %}
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-center">
+                        <a class="text-decoration-none text-secondary" href="{% url 'months_str' month %}">
+                            {{ month }} <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

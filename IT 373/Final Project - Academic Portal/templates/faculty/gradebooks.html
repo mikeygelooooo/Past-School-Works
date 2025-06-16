@@ -1,0 +1,69 @@
+{% extends 'base/faculty_base.html' %}
+
+{% block title %}Gradebooks{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container p-5">
+        {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+                role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Page Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="display-6 mb-3 fw-semibold">Gradebooks</h2>
+            </div>
+        </div>
+
+        <!-- Subject Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for subject in subjects %}
+            <div class="col">
+                <a href="{% url 'faculty-gradebook-view' subject.subject_code %}"
+                    class="text-decoration-none text-dark">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="bg-dark bg-opacity-10 p-3 rounded-circle">
+                                    <i class="fas fa-book fs-4 text-dark"></i>
+                                </div>
+                                <span class="badge bg-dark bg-opacity-10 text-dark px-3 py-2 rounded-pill">
+                                    {{ subject.subject_code }}
+                                </span>
+                            </div>
+                            <h5 class="card-title mb-2">{{ subject.subject_name }}</h5>
+                            <p class="card-text text-muted small mb-0">
+                                Click to view subject gradebook
+                                <i class="fas fa-arrow-right ms-1"></i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% if not subjects %}
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center py-5">
+                            <i class="fa-solid fa-users-slash fa-3x text-secondary mb-3"></i>
+                            <h5 class="fw-semibold text-secondary">No Subjects Found</h5>
+                            <p class="text-muted mb-0">You are not assigned to any subjects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

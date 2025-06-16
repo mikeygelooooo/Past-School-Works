@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>michæl's music taste</title>
+
+  <link rel="icon" href="https://www.freepnglogos.com/uploads/spotify-logo-png/image-gallery-spotify-logo-21.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+      background-color: gray;
+    }
+
+    .title_card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      width: 100%;
+      margin-bottom: 25px;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .title_text {
+      font-size: x-large;
+      padding-left: 10px;
+    }
+
+    .spotify_link {
+      text-decoration: none;
+      font-size: 40px;
+      font-weight: 600;
+      color: green;
+    }
+
+    .column {
+      float: left;
+      width: 33.33333%;
+      padding: 0 10px;
+    }
+
+    .row {
+      margin: 0 -5px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .eve_card,
+    .tyler_card,
+    .kessoku_card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      font-size: large;
+      margin-bottom: 10px;
+      transition: box-shadow 0.5s;
+    }
+
+    .eve_card {
+      background-color: aquamarine;
+    }
+
+    .tyler_card {
+      background-color: burlywood;
+    }
+
+    .kessoku_card {
+      background-color: palevioletred;
+    }
+
+    .eve_card:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.875);
+    }
+
+    .tyler_card:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.875);
+    }
+
+    .kessoku_card:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.875);
+    }
+
+    .eve_link,
+    .tyler_link,
+    .kessoku_link {
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 600;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title_card">
+    <div class="title_text">
+      <h1>Top 3 Songs from michæl's Top 3 Artists</h1>
+      <h2 style="display: inline">My Spotify Profile:</h2>
+      <a class="spotify_link" href="https://open.spotify.com/user/315hjkozfqwafx7laxa4rvve7oka?si=88904e820dc3479b"
+        target="_blank">michæl</a>
+    </div>
+    <img class="title_img" src="https://www.catsuka.com/interf/vignettes_news/eve_fightsong.jpg" width="25%" />
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="eve_card">
+        <img src="https://myvideogamelist-com.s3.amazonaws.com/assets/avatars/85e380f704381db.jpg" alt="eve"
+          width="100%" />
+        <h1 style="font-weight:900;">Eve</h1>
+        <a class="eve_link" href="https://open.spotify.com/artist/58oPVy7oihAEXE0Ott6JOf?si=fYSzbLjSRyWTzTICXS-hNA"
+          target="_blank">@oO0Eve0Oo</a>
+        <h2>1. Last Dance</h2>
+        <h2>2. Dramaturgy</h2>
+        <h2>3. As You Like It</h2>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="tyler_card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsB1O_2S7sR28PvVMHNTsx6y7saaKDSxmNMA&usqp=CAU"
+          alt="tyler" width="100%" />
+        <h1 style="font-weight:900;">Tyler, The Creator</h1>
+        <a class="tyler_link" href="https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF?si=JvZUeAsBQxStoNyXugiJxw"
+          target="_blank">@tylerthecreator</a>
+        <h2>1. SWEET/I THOUGHT YOU WANTED TO DANCE</h2>
+        <h2>2. See You Again</h2>
+        <h2>3. SORRY NOT SORRY</h2>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="kessoku_card">
+        <img src="https://i.scdn.co/image/ab6761610000e5eb86de41539f26da7d0626e257" alt="kessoku" width="100%" />
+        <h1 style="font-weight:900;">Kessoku Band</h1>
+        <a class="kessoku_link" href="https://open.spotify.com/artist/2nvl0N9GwyX69RRBMEZ4OD?si=ab059fD4QbGnnXPepjpkWA"
+          target="_blank">@BTR_anime</a>
+        <h2>1. Into The Light</h2>
+        <h2>2. Seishun Complex</h2>
+        <h2>3. Guitar, Loneliness, and Blue Planet</h2>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+body {
+    background-color: #f1f3f5;  /* A soft gray that creates nice contrast */
+}
+
+nav h1 {
+    font-family: 'Lobster', cursive;
+}
+
+.card-hover {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}

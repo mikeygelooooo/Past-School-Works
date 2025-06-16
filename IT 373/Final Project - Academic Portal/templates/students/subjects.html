@@ -1,0 +1,71 @@
+{% extends 'base/students_base.html' %}
+{% block title %}Subjects{% endblock %}
+{% block content %}
+<main>
+    <div class="container p-5">
+        <!-- Alert Messages -->
+        {% if messages %}
+        <div class="row mb-4">
+            <div class="col-12">
+                {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show shadow-sm"
+                    role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Page Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-6 fw-bold mb-3">Enrolled Subjects</h1>
+            </div>
+        </div>
+
+        <!-- Subject Cards -->
+        {% if subjects %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for subject in subjects %}
+            <div class="col">
+                <a href="{% url 'student-subject-view' subject.subject_code %}" class="text-decoration-none text-dark">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="bg-success bg-opacity-10 p-3 rounded-circle">
+                                    <i class="fas fa-book fs-4 text-success"></i>
+                                </div>
+                                <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">
+                                    {{ subject.subject_code }}
+                                </span>
+                            </div>
+                            <h5 class="card-title mb-2">{{ subject.subject_name }}</h5>
+                            <p class="card-text text-muted small mb-0">
+                                Click to view subject details
+                                <i class="fas fa-arrow-right ms-1"></i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center py-5">
+                            <i class="fa-solid fa-users-slash fa-3x text-secondary mb-3"></i>
+                            <h5 class="fw-semibold text-secondary">No Subjects Found</h5>
+                            <p class="text-muted mb-0">You are not assigned to any subjects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

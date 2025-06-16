@@ -1,0 +1,165 @@
+{% extends 'base/faculty_base.html' %}
+
+{% block title %}Gradebook | {{ subject.subject_name }}{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container p-5">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'faculty-gradebooks' %}"
+                        class="text-decoration-none text-dark">Gradebooks</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ subject.subject_code }}</li>
+            </ol>
+        </nav>
+
+        {% if messages %}
+        <div class="container mb-4">
+            {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+                role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="card shadow-sm">
+            <!-- Subject Details Section -->
+            <div class="card-header bg-light py-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-book text-dark me-2"></i>
+                    <h2 class="h4 mb-0">Subject Details</h2>
+                </div>
+            </div>
+
+            <div class="card-body bg-white">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Subject Code</label>
+                            <div class="border-start border-4 border-dark ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.subject_code }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Subject Name</label>
+                            <div class="border-start border-4 border-dark ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.subject_name }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Year Level</label>
+                            <div class="border-start border-4 border-dark ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.year_level }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructor Information Section -->
+            <div class="card-header bg-light py-3 border-top">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-chalkboard-teacher text-dark me-2"></i>
+                    <h2 class="h4 mb-0">Student List</h2>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="bg-light border-top">
+                            <th scope="col" class="text-nowrap p-3 w-25">
+                                <i class="fa-solid fa-hashtag me-2"></i>Student ID
+                            </th>
+                            <th scope="col" class="text-nowrap py-3">
+                                <i class="fa-solid fa-user me-2"></i>Full Name
+                            </th>
+                            <th scope="col" class="text-nowrap text-center py-3 w-25">
+                                <i class="fa-solid fa-graduation-cap me-2"></i>Grade
+                            </th>
+                            <th scope="col" class="text-nowrap text-center py-3 w-25">
+                                <i class="fa-solid fa-sliders me-2"></i>Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                        <tr>
+                            <td class="p-3">
+                                <span class="fw-medium text-nowrap text-secondary">{{ student.student_id }}</span>
+                            </td>
+                            <td class="py-3">
+                                <div class="fw-semibold text-nowrap text-dark">
+                                    {{ student.first_name }} {{ student.last_name }}
+                                </div>
+                            </td>
+                            <td class="text-center text-nowrap py-3">
+                                <span class="fw-medium text-secondary">{{ student.grade }}</span>
+                            </td>
+                            <td class="text-center text-nowrap py-3">
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#changeGrade-{{student.student_id}}-{{subject.subject_code}}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <form method="POST" action="{% url 'faculty-clear-grade' subject.subject_code %}"
+                                    class="d-inline">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="student_id" value="{{ student.student_id }}">
+                                    <button type="submit" class="btn btn-outline-danger"
+                                        onclick="return confirm('Are you sure you want to clear this grade?');">
+                                        <i class="fa-solid fa-eraser"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <div class="modal fade" id="changeGrade-{{student.student_id}}-{{subject.subject_code}}"
+                            tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="changePasswordModalFacultyLabel">Edit Student Grade
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <form method="POST"
+                                        action="{% url 'faculty-gradebook-view' subject.subject_code %}">
+                                        {% csrf_token %}
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="grade_input">Student Grade</label>
+                                                <input type="number" class="form-control" name="grade_input"
+                                                    placeholder="Enter grade" required min="0" max="100">
+                                                <input type="hidden" name="student_id" value="{{ student.student_id }}">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="col-6">
+                                                <div class="d-flex justify-content-end gap-2">
+                                                    <button type="button" class="btn btn-secondary w-100"
+                                                        data-bs-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-dark w-100">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

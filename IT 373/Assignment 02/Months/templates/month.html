@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if month == "Invalid" %}
+        <h1 class="text-center text-danger">Selected Month Does Not Exist</h1>
+    {% else %}
+        <h1 class="text-center">Events for the Month of {{ month }}</h1>
+        <hr><br>
+        <div class="container">
+            <ul class="list-unstyled">
+                {% for event in events %}
+                    <li class="mb-4">
+                        <h3 class="text-center">
+                            <i class="bi bi-dot fs-3"></i> {{ event }}
+                        </h3>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,96 @@
+* {
+    font-family: futura-pt, sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px 0px;
+}
+
+img {
+    width: 50%;
+}
+
+h1 {
+    text-align: right;
+    font-weight: 900;
+    padding-left: 5%;
+}
+
+.main-page {
+    display: flex;
+    align-items: center;
+    padding: 7.55% 5% 0%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+}
+
+.title {
+    text-decoration: none;
+    color: black;
+    font-size: 50px;
+    font-weight: 900;
+    padding: 2%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: burlywood;
+    width: 150px;
+    box-shadow: 0px 17.5px 15px -15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dropbtn {
+    border: none;
+    width: 150px;
+    height: 100%;
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: inherit;
+    padding-top: 35%;
+    padding-bottom: 35%;
+}
+
+.nav-links li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: sandybrown;
+}
+
+.dropdown:hover .dropbtn {
+    background-color:peachpuff;
+}

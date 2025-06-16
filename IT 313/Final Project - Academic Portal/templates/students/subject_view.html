@@ -1,0 +1,248 @@
+{% extends 'base/students_base.html' %}
+{% block title %}{{ subject.subject_name }}{% endblock %}
+{% block content %}
+<main>
+    <div class="container p-5">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'student-subjects' %}"
+                        class="text-decoration-none">Subjects</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ subject.subject_code }}</li>
+            </ol>
+        </nav>
+
+        {% if messages %}
+        <div class="container mb-4">
+            {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+                role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="card shadow-sm">
+            <!-- Subject Details Section -->
+            <div class="card-header bg-light py-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-book text-success me-2"></i>
+                    <h2 class="h4 mb-0">Subject Details</h2>
+                </div>
+            </div>
+
+            <div class="card-body bg-white">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Subject Code</label>
+                            <div class="border-start border-4 border-success ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.subject_code }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Subject Name</label>
+                            <div class="border-start border-4 border-success ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.subject_name }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Schedule</label>
+                            <div class="border-start border-4 border-success ps-3 mt-2">
+                                <h3 class="h5 mb-0">{{ subject.formatted_schedule }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructor Information Section -->
+            <div class="card-header bg-light py-3 border-top">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-chalkboard-teacher text-success me-2"></i>
+                    <h2 class="h4 mb-0">Instructor Information</h2>
+                </div>
+            </div>
+
+            <div class="card-body bg-white">
+                <div class="row g-4">
+                    <div class="col-md-4 text-center py-2">
+                        <img src="{{ subject.instructor.profile_pic.url }}" alt="Student Profile"
+                            class="img-fluid rounded-circle border border-2 border-success" width="125">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Instructor ID</label>
+                            <div class="d-flex align-items-center border-start border-4 border-success ps-3 mt-2">
+                                <i class="fas fa-hashtag text-success me-2"></i>
+                                <h3 class="h5 mb-0">{{ subject.instructor.faculty_id }}</h3>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Instructor Name</label>
+                            <div class="d-flex align-items-center border-start border-4 border-success ps-3 mt-2">
+                                <i class="fas fa-user text-success me-2"></i>
+                                <h3 class="h5 mb-0">{{ subject.instructor.first_name }} {{ subject.instructor.last_name }}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Instructor Email</label>
+                            <div class="d-flex align-items-center border-start border-4 border-success ps-3 mt-2">
+                                <i class="fas fa-envelope text-success me-2"></i>
+                                <h3 class="h5 mb-0">{{ subject.instructor.email }}</h3>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-muted small text-uppercase fw-bold">Instructor Phone</label>
+                            <div class="d-flex align-items-center border-start border-4 border-success ps-3 mt-2">
+                                <i class="fas fa-envelope text-success me-2"></i>
+                                <h3 class="h5 mb-0">{{ subject.instructor.phone_number }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materials Section -->
+            <div class="card-header bg-light py-3 border-top">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-book-open text-success me-2"></i>
+                    <h2 class="h4 mb-0">Materials</h2>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="bg-light border-top">
+                            <th scope="col" class="text-nowrap p-3">
+                                <i class="fa-solid fa-hashtag text-success me-2"></i>Lecture ID
+                            </th>
+                            <th scope="col" class="text-nowrap py-3">
+                                <i class="fa-solid fa-file-signature text-success me-2"></i>Lecture Title
+                            </th>
+                            <th scope="col" class="text-nowrap py-3">
+                                <i class="fa-solid fa-sliders text-success me-2"></i>Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for material in materials %}
+                        <tr>
+                            <td class="p-3">
+                                <span class="fw-medium text-nowrap text-secondary">{{ material.lecture_id }}</span>
+                            </td>
+                            <td class="py-3">
+                                <div class="fw-semibold text-nowrap text-dark">
+                                    {{ material.lecture_title }}
+                                </div>
+                            </td>
+                            <td class="text-nowrap py-3">
+                                <a href="{{ material.lecture_file.url }}" class="btn btn-outline-success">
+                                    <i class="fa-solid fa-download text-success"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td class=" text-center p-3" colspan="3">
+                                <span class="fw-medium text-nowrap text-secondary">No materials available.</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-header bg-light py-3 border-top">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-clipboard text-success me-2"></i>
+                        <h2 class="h4 mb-0">Tasks</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="bg-light border-top">
+                            <th scope="col" class="text-nowrap p-3">
+                                <i class="fa-solid fa-hashtag text-success me-2"></i>Task ID
+                            </th>
+                            <th scope="col" class="text-nowrap py-3">
+                                <i class="fa-solid fa-file-signature text-success me-2"></i>Task Title
+                            </th>
+                            <th scope="col" class="text-nowrap py-3">
+                                <i class="fa-solid fa-clock text-success me-2"></i>Task Deadline
+                            </th>
+                            <th scope="col" class="text-nowrap text-center py-3">
+                                <i class="fa-solid fa-sliders text-success me-2"></i>Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks %}
+                        <tr>
+                            <td class="p-3">
+                                <span class="fw-medium text-nowrap text-secondary">{{ task.task_id }}</span>
+                            </td>
+                            <td class="py-3">
+                                <div class="fw-semibold text-nowrap text-dark">
+                                    {{ task.task_title }}
+                                </div>
+                            </td>
+                            <td class="py-3">
+                                <div class="fw-semibold text-nowrap text-dark">
+                                    {{ task.task_deadline }}
+                                </div>
+                            </td>
+                            <td class="text-nowrap text-center py-3">
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                    data-bs-target="#viewTaskModal{{ task.id }}">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <div class="modal fade" id="viewTaskModal{{ task.id }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Task Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Task ID:</strong> {{ task.task_id }}</p>
+                                        <p><strong>Task Title:</strong> {{ task.task_title }}</p>
+                                        <p><strong>Task Description:</strong></p>
+                                        <p>{{ task.task_description }}</p>
+                                        <p><strong>Task Deadline:</strong> {{ task.task_deadline }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <tr>
+                            <td class=" text-center p-3" colspan="4">
+                                <span class="fw-medium text-nowrap text-secondary">No tasks available.</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
