@@ -29,7 +29,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| `Online Shopping System`    | Console-based shopping system with user account features  |
+| [`Online Shopping System`](https://github.com/mikeygelooooo/Online-Shopping-System)    | Console-based shopping system with user account features  |
 
 ---
 

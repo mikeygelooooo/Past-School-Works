@@ -28,7 +28,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| [`Student Dashboard`](https://github.com/mikeygelooooo/student-dashboard)         | Website for students to manage subjects, tasks, and study materials |
+| [`Student Dashboard`](https://github.com/mikeygelooooo/Student-Dashboard)         | Website for students to manage subjects, tasks, and study materials |
 
 ---
 

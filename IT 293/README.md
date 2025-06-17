@@ -22,7 +22,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| `Probability Calculator`    | Python app for calculating different types of probability |
+| [`Probability Calculator`](https://github.com/mikeygelooooo/Probability Calculator)    | Python app for calculating different types of probability |
 
 ---
 

@@ -22,11 +22,11 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | Project/Exercise Name        | Description                                               |
 |-----------------------------|-----------------------------------------------------------|
-| `Manga`                     | Web app for managing a manga/book collection with basic CRUD functionality |
+| [`Manga Library`](https://github.com/mikeygelooooo/Manga-Library)                     | Web app for managing a manga/book collection with basic CRUD functionality |
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| `iEssentials`              | E-commerce-style website for browsing and purchasing accessories for Apple devices |
+| [`iPhone Accessories Store`](https://github.com/mikeygelooooo/iPhone-Accessories-Store)              | E-commerce-style website for browsing and purchasing accessories for Apple devices |
 
 ---
 

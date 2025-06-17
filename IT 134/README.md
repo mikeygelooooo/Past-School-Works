@@ -33,7 +33,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**            | **Description**                                      |
 |-----------------------------|------------------------------------------------------|
-| `Lucky Nine`                | Simulation of the card game *Lucky Nine*, featuring card draws, point system, and game logic |
+| [`Lucky Nine`](https://github.com/mikeygelooooo/Lucky-Nine)                | Simulation of the card game *Lucky Nine*, featuring card draws, point system, and game logic |
 
 ---
 

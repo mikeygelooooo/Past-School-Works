@@ -22,7 +22,7 @@ This folder contains all projects, exercises, or activities completed for the su
 
 | **Final Project**           | **Description**                                           |
 |-----------------------------|-----------------------------------------------------------|
-| `Steel and Metal Workshop`  | Website for browsing and requesting steel and metal fabrication services |
+| [`Steel and Metal Workshop`](https://github.com/mikeygelooooo/Steel-and-Metal-Workshop)  | Website for browsing and requesting steel and metal fabrication services |
 
 ---
 
