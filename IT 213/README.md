@@ -1,4 +1,4 @@
-# 📚 IT 163 — Data Structures and Algorithms
+# 📚 IT 213 — Data Structures and Algorithms
 
 This folder contains all projects, exercises, or activities completed for the subject **Data Structures and Algorithms** during my time as a BSIT student at **Eastern Visayas State University**.
 
